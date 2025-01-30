@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import Link from "next/link"
 import useSWR from "swr"
+import Style from "../../styles/Users.module.css"
 // @ts-ignore
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
@@ -21,8 +22,8 @@ const Users = () => {
     { // @ts-expect-error
      data && data.users && data.users.map((user) => (
       <Link href={`users/${user.id}`} key={user.id}>
-     <li  style={{ color : 'yellowgreen'}}> {user.firstName}</li>
-     </Link>
+        <li  className={Style.text}> {user.firstName}</li>
+      </Link>
     ))}
     </>
   )
